@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta name="google-site-verification" content="FXaz1WFCxDhUUI_rqwlyrIS-ymnbgAXvwPPf4PoLRBo" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="media/favicon-196x196.png" rel="shortcut icon" />
+    <title>Faiz Ur Rehman</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .n-header {
+            height: 0px;
+            background: transparent;
+        }
+
+        .n-title {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background-color: #fff;
+        }
+
+        .n-title h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #333;
+            margin: 0;
+        }
+
+        .n-byline {
+            text-align: center;
+            padding: 20px 0 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .byline a, .byline .dropdown-trigger {
+            color: #999;
+            text-decoration: none;
+            font-weight: normal;
+            letter-spacing: 2px;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .byline a:hover, .byline .dropdown-trigger:hover {
+            color: #BA0C2F;
+        }
+
+        .separator {
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 5px;
+            padding: 10px 0;
+            opacity: 0;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            visibility: hidden;
+        }
+
+        .dropdown-content.show {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            color: #333 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem !important;
+            letter-spacing: 1px !important;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #BA0C2F !important;
+        }
+
+        .dropdown-trigger::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .n-article {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        .image-text {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .image-text--image {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        .faiz-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 0;
+            margin-left: 0;
+            margin-right: auto;
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: #f8f9fa;
+            color: #BA0C2F;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+        }
+
+        .social-links a:hover {
+            background-color: #BA0C2F;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(186,12,47,0.3);
+        }
+
+        .social-links i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-section {
+            font-size: 1.1em;
+            line-height: 1.8;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transform: translateY(-20px);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .content-section b {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .content-section a {
+            color: #BA0C2F;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        .cv-link {
+            color: #BA0C2F !important;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cv-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .email-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .email-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .email-option:hover {
+            border-color: #BA0C2F;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(186,12,47,0.2);
+        }
+
+        .email-option i {
+            font-size: 20px;
+            color: #BA0C2F;
+            width: 24px;
+            text-align: center;
+        }
+
+        .email-option div {
+            flex: 1;
+        }
+
+        .email-option strong {
+            display: block;
+            margin-bottom: 2px;
+            color: #333;
+        }
+
+        .email-option p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .image-text {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .faiz-image {
+                height: 300px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .n-article {
+                padding: 40px 20px;
+            }
+
+            .n-title h1 {
+                font-size: 2em;
+            }
+
+            .byline {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .separator {
+                display: none;
+            }
+
+            .dropdown-content {
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+                top: auto;
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION: HEADER -->
+    <div class="n-header"></div>
+    
+    <div class="n-title">
+        <h1>FAIZ UR REHMAN</h1>
+    </div>
+    
+    <!-- SECTION: AUTHORS -->
+    <div class="n-byline">
+        <div class="byline">
+            <span class="separator">|</span>
+            <a href="./">ABOUT</a>
+            <span class="separator">|</span>
+            <div class="dropdown">
+                <span class="dropdown-trigger">RESEARCH</span>
+                <div class="dropdown-content">
+                    <a href="publications">Publications</a>
+                    <a href="research-papers">Research Papers</a>
+                    <a href="seminars-conferences">Seminars & Conferences</a>
+                    <a href="academic-services">Academic Services</a>
+                </div>
+            </div>
+            <span class="separator">|</span>
+            <a href="teaching">TEACHING</a>
+            <span class="separator">|</span>
+            <a href="op-ed">OPED & BLOGS</a>
+            <span class="separator">|</span>
+        </div>
+    </div>
+          
+    <!-- SECTION: MAIN BODY -->
+    <div class="n-article">
+        <div class="image-text">
+            <div class="image-text--image">
+                <img src="media/image.jpg" class="faiz-image">
+                <div class="social-links">
+                    <a href="https://ibacity-my.sharepoint.com/:b:/g/personal/faizrehman_iba_edu_pk/EarGFrOF189AqmVkCNLqhcIBW75Tzs5JbGaxEsDn7IQkpQ?e=KGDkb8" target="_blank" title="Download CV">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a href="#" onclick="showEmailPopup()" class="email-link" title="Email"> 
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=wpZKXggAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/faiz-ur-rehman-74ba33b7/" class="contact-item linkedin-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/faiz_economist?lang=en" target="_blank" title="Twitter/X">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="content-section">
+  <p><strong>Welcome to My Academic Homepage!</strong></p>
+  
+  <p>
+    I am a <strong>Professor of Economics</strong> at the 
+    <a href="https://www.iba.edu.pk" target="_blank" rel="noopener noreferrer" aria-label="Institute of Business Administration Karachi (opens in a new tab)">
+      Institute of Business Administration (IBA), Karachi
+    </a>. 
+    My research focuses on applied economics, particularly in the areas of 
+    <em>political economy</em>, the <em>economics of conflict</em> &amp; <em>terrorism</em>.
+  </p>
+  
+  <p>
+    I hold a <strong>PhD in Economics</strong> from the 
+    <a href="https://edle-phd.eu/" target="_blank" rel="noopener noreferrer" aria-label="European Doctorate in Law and Economics (opens in a new tab)">
+      Universities of Bologna, Hamburg, and Erasmus Rotterdam
+    </a>, awarded through the Erasmus Mundus fellowship as part of the prestigious 
+    European Doctorate in Law and Economics (EDLE) program. 
+    Before joining IBA in 2021, I served as an Assistant Professor at 
+    <a href="https://www.qu.edu.pk" target="_blank" rel="noopener noreferrer" aria-label="Quaid-i-Azam University (opens in a new tab)">
+      Quaid-i-Azam University, Islamabad
+    </a>.
+  </p>
+  
+  <p>
+    <strong>Research Fields:</strong> Political Economy, Economics of Conflict &amp; Terrorism, Development Economics
+  </p>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Popup Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Contact Email</h3>
+            <div class="email-options">
+                <a href="mailto:faizrehman@iba.edu.pk" class="email-option">
+                    <i class="fa-solid fa-university"></i>
+                    <div>
+                        <strong>IBA Email</strong>
+                        <p>faizrehman@iba.edu.pk</p>
+                    </div>
+                </a>
+                <a href="mailto:faizeconomist1@gmail.com" class="email-option">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Gmail</strong>
+                        <p>faizeconomist1@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dropdownTimeout;
+        
+        function showDropdown(dropdownElement) {
+            clearTimeout(dropdownTimeout);
+            const dropdown = dropdownElement.querySelector('.dropdown-content');
+            dropdown.classList.add('show');
+        }
+        
+        function hideDropdown(dropdownElement) {
+            dropdownTimeout = setTimeout(() => {
+                const dropdown = dropdownElement.querySelector('.dropdown-content');
+                dropdown.classList.remove('show');
+            }, 300); // 300ms delay before hiding
+        }
+        
+        // Add event listeners for dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const dropdownTrigger = dropdown.querySelector('.dropdown-trigger');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                
+                dropdownTrigger.addEventListener('mouseenter', () => showDropdown(dropdown));
+                dropdownTrigger.addEventListener('mouseleave', () => hideDropdown(dropdown));
+                dropdownContent.addEventListener('mouseenter', () => showDropdown(dropdown));
+                dropdownContent.addEventListener('mouseleave', () => hideDropdown(dropdown));
+            });
+        });
+
+        function showEmailPopup() {
+            document.getElementById('emailModal').style.display = 'block';
+        }
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailModal = document.getElementById('emailModal');
+            const closeBtn = document.getElementsByClassName('close')[0];
+            
+            closeBtn.onclick = function() {
+                emailModal.style.display = 'none';
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == emailModal) {
+                    emailModal.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

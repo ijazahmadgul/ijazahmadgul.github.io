@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="media/favicon-196x196.png" rel="shortcut icon" />
+    <title>Faiz Ur Rehman - Op-Ed & Blogs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .n-header {
+            height: 0px;
+            background: transparent;
+        }
+
+        .n-title {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background-color: #fff;
+        }
+
+        .n-title h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #333;
+            margin: 0;
+        }
+
+        .n-byline {
+            text-align: center;
+            padding: 20px 0 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .byline a, .byline .dropdown-trigger {
+            color: #999;
+            text-decoration: none;
+            font-weight: normal;
+            letter-spacing: 2px;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .byline a:hover, .byline .dropdown-trigger:hover {
+            color: #BA0C2F;
+        }
+
+        .separator {
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .n-article {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 40px 30px 150px;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            z-index: 1000;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            padding: 10px 0;
+            opacity: 0;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            visibility: hidden;
+        }
+
+        .dropdown-content.show {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            color: #333 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem !important;
+            letter-spacing: 1px !important;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #BA0C2F !important;
+        }
+
+        .dropdown-trigger::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .opinion-section h2 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .op-ed-item {
+            margin-bottom: 15px;
+            padding: 0;
+        }
+
+        .op-ed-item p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .op-ed-item b {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .op-ed-item em {
+            color: #BA0C2F;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .n-article {
+                padding: 20px;
+            }
+
+            .n-title h1 {
+                font-size: 2em;
+            }
+
+            .byline {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .separator {
+                display: none;
+            }
+
+            .dropdown-content {
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+                top: auto;
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION: HEADER -->
+    <div class="n-header"></div>
+    
+    <div class="n-title">
+        <h1>FAIZ UR REHMAN</h1>
+    </div>
+    
+    <!-- SECTION: AUTHORS -->
+    <div class="n-byline">
+        <div class="byline">
+            <span class="separator">|</span>
+            <a href="./">ABOUT</a>
+            <span class="separator">|</span>
+            <div class="dropdown">
+               <span class="dropdown-trigger">RESEARCH</span>
+                <div class="dropdown-content">
+                    <a href="publications">Publications</a>
+                    <a href="research-papers">Research Papers</a>
+                    <a href="seminars-conferences">Seminars & Conferences</a>
+                    <a href="academic-services">Academic Services</a>
+                </div>
+            </div>
+            <span class="separator">|</span>
+            <a href="teaching">TEACHING</a>
+            <span class="separator">|</span>
+            <a href="op-ed">OPED & BLOGS</a>
+            <span class="separator">|</span>
+        </div>
+    </div>
+    
+    <!-- SECTION: MAIN BODY -->
+    <div class="n-article">
+        <div class="opinion-section">
+            <h2>OPINION IN PRINT AND ELECTRONIC MEDIA</h2>
+            
+            <div class="op-ed-item"> 
+                <p>
+                    <a href="https://pakobserver.net/cost-of-elite-capture-and-pakistans-stalled-progress/" target="_blank">
+                        Cost of Elite Capture and Pakistan's Stalled Progress</a>, 
+                    September 3, 2025, 
+                    <em>Pakistan Observer</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dropdownTimeout;
+        
+        function showDropdown() {
+            clearTimeout(dropdownTimeout);
+            const dropdown = document.querySelector('.dropdown-content');
+            dropdown.classList.add('show');
+        }
+        
+        function hideDropdown() {
+            dropdownTimeout = setTimeout(() => {
+                const dropdown = document.querySelector('.dropdown-content');
+                dropdown.classList.remove('show');
+            }, 300); // 300ms delay before hiding
+        }
+        
+        // Add event listeners for dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownTrigger = document.querySelector('.dropdown-trigger');
+            const dropdownContent = document.querySelector('.dropdown-content');
+            
+            dropdownTrigger.addEventListener('mouseenter', showDropdown);
+            dropdownTrigger.addEventListener('mouseleave', hideDropdown);
+            dropdownContent.addEventListener('mouseenter', showDropdown);
+            dropdownContent.addEventListener('mouseleave', hideDropdown);
+        });
+    </script>
+</body>
+</html>
