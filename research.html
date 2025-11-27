@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="media/favicon-196x196.png" rel="shortcut icon" />
-    <title>Ijaz Ahmad - Publications</title>
+    <title>Ijaz Ahmad - Data Dashboards</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -44,7 +44,6 @@
             padding: 20px 0 20px 0;
             background-color: #fff;
             border-bottom: 1px solid #eee;
-            position: relative;
         }
 
         .byline {
@@ -65,6 +64,10 @@
         }
 
         .byline a:hover, .byline .dropdown-trigger:hover {
+            color: #BA0C2F;
+        }
+
+        .byline a.active {
             color: #BA0C2F;
         }
 
@@ -97,7 +100,7 @@
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            margin-top: 10px;
+            margin-top: 5px;
             padding: 10px 0;
             opacity: 0;
             transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -131,136 +134,33 @@
             margin-left: 5px;
         }
 
-        .publications-section h2 {
+        .dashboard-container {
+            margin-bottom: 40px;
+        }
+
+        .dashboard-container h2 {
             font-size: 1.4em;
             color: #333;
             margin-bottom: 20px;
             font-weight: 600;
         }
 
-        .publications-dropdown {
+        .dashboard-wrapper {
             position: relative;
-            margin-bottom: 20px;
-        }
-
-        .publications-toggle {
-            background: none;
-            border: none;
-            font-size: 1.4em;
-            color: #333;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Georgia', serif;
-        }
-
-        .publications-toggle:hover {
-            color: #BA0C2F;
-        }
-
-        .publications-toggle::after {
-            content: '▼';
-            font-size: 0.8em;
-            transition: transform 0.3s ease;
-        }
-
-        .publications-toggle.active::after {
-            transform: rotate(180deg);
-        }
-
-        .publications-list {
-            max-height: 1000px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .publications-list.hide {
-            max-height: 0;
-        }
-
-        .publication-item {
-            margin-bottom: 25px;
-            padding: 0;
-        }
-
-        .publication-item p {
-            margin: 0;
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #333;
-        }
-
-        .publication-item b {
-            color: #000;
-            font-weight: bold;
-        }
-
-        .publication-item em {
-            color: #BA0C2F;
-            font-style: italic;
-        }
-
-        .details-toggle {
-            background: none;
-            border: none;
-            color: #BA0C2F;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: 1px solid #BA0C2F;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .details-toggle:hover {
-            background-color: #BA0C2F;
-            color: white;
-        }
-
-        .publication-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            margin-top: 15px;
-            padding-left: 20px;
-            border-left: 3px solid #eee;
-        }
-
-        .publication-details.show {
-            max-height: 2000px;
-        }
-
-        .detail-section {
-            margin-bottom: 20px;
-        }
-
-        .detail-section h4 {
-            color: #BA0C2F;
-            font-size: 1em;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .detail-section p {
-            font-size: 0.95em;
-            line-height: 1.6;
-            text-align: justify;
-            margin-bottom: 10px;
-        }
-
-        .figure-placeholder {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
             background-color: #f8f9fa;
-            border: 2px dashed #ddd;
-            padding: 40px;
-            text-align: center;
-            margin: 15px 0;
             border-radius: 8px;
-            color: #666;
-            font-style: italic;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-wrapper iframe {
+            display: block;
+            margin: 0 auto;
+            border: none;
+            border-radius: 4px;
         }
 
         @media (max-width: 768px) {
@@ -288,6 +188,15 @@
                 top: auto;
                 min-width: 250px;
             }
+
+            .dashboard-wrapper {
+                padding: 10px;
+            }
+
+            .dashboard-wrapper iframe {
+                width: 100% !important;
+                height: 300px !important;
+            }
         }
     </style>
 </head>
@@ -311,6 +220,7 @@
                     <a href="publications">Publications</a>
                     <a href="research-papers">Research Papers</a>
                     <a href="seminars-conferences">Seminars & Conferences</a>
+                    <a href="#data-dashboards">Data Dashboards</a>
                 </div>
             </div>
             <span class="separator">|</span>
@@ -325,70 +235,14 @@
     
     <!-- SECTION: MAIN BODY -->
     <div class="n-article">
-        <div class="publications-section">
-            <div class="publications-dropdown">
-                <button class="publications-toggle" onclick="togglePublications()">
-                    SELECTED PUBLICATIONS
-                </button>
-                <div class="publications-list" id="publicationsList">
-                    <div class="publication-item">
-                        <p>
-                            <a href="https://doi.org/10.1016/j.jdeveco.2023.103087" target="_blank">
-                                Digital Financial Inclusion and Economic Growth in Emerging Markets: A Panel Data Analysis</a>
-                            (with Sarah Khan & Muhammad Ali), 2023,
-                            <em>Journal of Development Economics</em>
-                            <button class="details-toggle" onclick="toggleDetails('details1')">details</button>
-                        </p>
-                        <div class="publication-details" id="details1">
-                            <div class="detail-section">
-                                <h4>Abstract</h4>
-                                <p>This study examines the relationship between digital financial inclusion and economic growth across 15 emerging market economies from 2010-2020. Using panel data analysis and instrumental variable techniques, we find that a 1% increase in digital financial inclusion is associated with a 0.3% increase in GDP per capita growth. The results are robust across different specifications and highlight the importance of mobile banking and digital payment systems in promoting economic development.</p>
-                            </div>
-                            <div class="detail-section">
-                                <h4>Key Figures</h4>
-                                <div class="figure-placeholder">
-                                    Figure 1: Digital Financial Inclusion Index by Country (2010-2020)
-                                    <br><em>Insert figure here</em>
-                                </div>
-                                <div class="figure-placeholder">
-                                    Figure 2: Correlation between Digital Finance and GDP Growth
-                                    <br><em>Insert figure here</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>
-                            <a href="https://doi.org/10.1080/09638288.2023.2241567" target="_blank">
-                                Labor Market Dynamics and Youth Employment in South Asia: Evidence from Pakistan</a>
-                            (with Noman Shah), 2023,
-                            <em>Applied Economics Letters</em>
-                            <button class="details-toggle" onclick="toggleDetails('details2')">details</button>
-                        </p>
-                        <div class="publication-details" id="details2">
-                            <div class="detail-section">
-                                <h4>Abstract</h4>
-                                <p>Youth unemployment remains a persistent challenge in Pakistan, with rates exceeding 25% among the 15-24 age group. This paper analyzes labor market dynamics using data from the Pakistan Labour Force Survey (2015-2020) and identifies key barriers to youth employment including skills mismatch, limited job creation in formal sectors, and regional disparities. Our findings suggest that targeted skills development programs and entrepreneurship support could significantly improve youth employment outcomes.</p>
-                            </div>
-                            <div class="detail-section">
-                                <h4>Key Figures</h4>
-                                <div class="figure-placeholder">
-                                    Figure 1: Youth Unemployment Trends in Pakistan (2015-2020)
-                                    <br><em>Insert figure here</em>
-                                </div>
-                                <div class="figure-placeholder">
-                                    Figure 2: Regional Distribution of Youth Employment by Sector
-                                    <br><em>Insert figure here</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="data-dashboards" class="dashboard-container">
+            <h2>Funding Disparity in NIFA Funding</h2>
+            <div class="dashboard-wrapper">
+                <iframe title="Funding Disparity in NIFA Funding-02" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjhiZDI1Y2EtZDIxMS00NDhhLThiOWItMGUwZjFlOTUxMjk1IiwidCI6IjAzNWRkZWY2LTI0MzMtNDhiNi04NTI2LTcwY2E4MTgxZjc2ZCIsImMiOjN9" frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </div>
     </div>
-    
+
     <script>
         let dropdownTimeout;
         
@@ -402,29 +256,7 @@
             dropdownTimeout = setTimeout(() => {
                 const dropdown = document.querySelector('.dropdown-content');
                 dropdown.classList.remove('show');
-            }, 300);
-        }
-        
-        function toggleDetails(detailsId) {
-            const details = document.getElementById(detailsId);
-            if (details.classList.contains('show')) {
-                details.classList.remove('show');
-            } else {
-                details.classList.add('show');
-            }
-        }
-        
-        function togglePublications() {
-            const publicationsList = document.getElementById('publicationsList');
-            const toggleButton = document.querySelector('.publications-toggle');
-            
-            if (publicationsList.classList.contains('hide')) {
-                publicationsList.classList.remove('hide');
-                toggleButton.classList.remove('active');
-            } else {
-                publicationsList.classList.add('hide');
-                toggleButton.classList.add('active');
-            }
+            }, 300); // 300ms delay before hiding
         }
         
         // Add event listeners for dropdown
